@@ -289,7 +289,7 @@ __pycache__/
 
 # Custom
 _local
-dep
+#dep
 resources
 bin
 *.code-workspace
