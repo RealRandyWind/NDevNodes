@@ -203,11 +203,27 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
+    <ClInclude Include="..\lib\NDevNodes.h" />
+    <ClInclude Include="..\lib\NDevNodesComponent.h" />
+    <ClInclude Include="..\lib\NDevNodesComponents.h" />
+    <ClInclude Include="..\lib\NDevNodesComponents\NDevNodesContextComponent.h" />
+    <ClInclude Include="..\lib\NDevNodesComponents\NDevNodesDataComponent.h" />
+    <ClInclude Include="..\lib\NDevNodesComponents\NDevNodesNameComponent.h" />
+    <ClInclude Include="..\lib\NDevNodesComponents\NDevNodesTypeComponent.h" />
+    <ClInclude Include="..\lib\NDevNodesCompute.h" />
+    <ClInclude Include="..\lib\NDevNodesComputes.h" />
+    <ClInclude Include="..\lib\NDevNodesComputes\NDevNodesSimplifyCompute.h" />
+    <ClInclude Include="..\lib\NDevNodesConstruct.h" />
+    <ClInclude Include="..\lib\NDevNodesNode.h" />
+    <ClInclude Include="..\lib\NDevObject.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NDevNodesLIB.cpp" />
+    <ClCompile Include="NDevNodesComponent.cpp" />
+    <ClCompile Include="NDevNodesCompute.cpp" />
+    <ClCompile Include="NDevNodesConstruct.cpp" />
+    <ClCompile Include="NDevNodesNode.cpp" />
+    <ClCompile Include="NDevObject.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

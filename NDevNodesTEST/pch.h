@@ -8,5 +8,8 @@
 #define PCH_H
 
 // add headers that you want to pre-compile here
+#include "NDev.h"
+#include "NDevObject.h"
+#include "NDevNodes.h"
 
 #endif //PCH_H

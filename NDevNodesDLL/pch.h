@@ -8,6 +8,11 @@
 #define PCH_H
 
 // add headers that you want to pre-compile here
-#include "framework.h"
+#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+// Windows Header Files
+#include <windows.h>
+
+#include "NDev.h"
+#include "NDevObject.h"
 
 #endif //PCH_H
