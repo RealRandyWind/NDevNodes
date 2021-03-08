@@ -216,6 +216,7 @@
     <ClInclude Include="..\lib\NDevNodesConstruct.h" />
     <ClInclude Include="..\lib\NDevNodesNode.h" />
     <ClInclude Include="..\lib\NDevObject.h" />
+    <ClInclude Include="..\lib\_NDevNodesCollections.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

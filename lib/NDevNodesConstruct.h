@@ -5,7 +5,7 @@
 #include "NDevNodesNode.h"
 #include "NDevNodesComponent.h"
 
-#include <set>
+#include "_NDevNodesCollections.h"
 
 namespace NDev
 {
@@ -16,8 +16,8 @@ namespace NDev
 		class FConstruct : FObject
 		{
 		public:
-			using FNodes = std::set<FNode*>;
-			using FComponents = std::set<FComponent*>;
+			using FNodes = TSet<FNode*>;
+			using FComponents = TSet<FComponent*>;
 
 		private:
 			FNodes _Nodes;

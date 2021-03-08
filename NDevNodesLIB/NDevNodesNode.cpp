@@ -33,22 +33,22 @@ FNode::~FNode()
 
 FVoid FNode::Add(FComponent* Component)
 {
-	_Components.push_back(Component);
+	_Components.Add(Component);
 }
 
 FVoid FNode::Remove(FComponent* Component)
 {
-	_Components.remove(Component);
+	_Components.Remove(Component);
 }
 
 FVoid FNode::Add(FNode* Node)
 {
-	_Nodes.push_back(Node);
+	_Nodes.Add(Node);
 }
 
 FVoid FNode::Remove(FNode* Node)
 {
-	_Nodes.remove(Node);
+	_Nodes.Remove(Node);
 }
 
 FVoid FNode::ClearNodesOnDestory(FBoolean bTrue)

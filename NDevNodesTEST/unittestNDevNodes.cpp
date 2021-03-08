@@ -37,8 +37,8 @@ namespace NDev
 					Components[Index] = new FComponent();
 					Object->Add(Components[Index]);
 				}
-				Assert::AreEqual(N, Object->Nodes().size());
-				Assert::AreEqual(N, Object->Components().size());
+				Assert::AreEqual(N, Object->Nodes().Size());
+				Assert::AreEqual(N, Object->Components().Size());
 				for (auto Item : Object->Nodes()) { Assert::IsNotNull(Item, NullPtr, LINE_INFO()); }
 				for (auto Item : Object->Components()) { Assert::IsNotNull(Item, NullPtr, LINE_INFO()); }
 				for (auto &Item : Nodes) { Object->Remove(Item); delete Item; Item = Null; }

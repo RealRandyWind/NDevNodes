@@ -4,7 +4,7 @@
 #include "NDevObject.h"
 #include "NDevNodesComponent.h"
 
-#include <list>
+#include "_NDevNodesCollections.h"
 
 namespace NDev
 {
@@ -15,15 +15,15 @@ namespace NDev
 		class FNode : FObject
 		{
 		public:
-			using FComponents = std::list<FComponent*>;
-			using FNodes = std::list<FNode*>;
+			using FComponents = TList<FComponent*>;
+			using FNodes = TList<FNode*>;
 
 		private:
 			FBoolean _bClearNodesOnDestroy, _bClearComponentsOnDesrtoy;
 			FComponents _Components;
 			FNodes _Nodes;
 
-		public:			
+		public:
 			FNode();
 			
 			~FNode();
