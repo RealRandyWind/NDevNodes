@@ -14,11 +14,12 @@ FNode::FNode() : FObject()
 
 FNode::~FNode()
 {
-	if (_bClearComponentsOnDesrtoy)
+	for (auto Component : Components())
 	{
-		for (auto Component : Components())
+		if (Component)
 		{
-			if (Component) { delete Component;  }
+			Component->_OnParentDestroy(this, _bClearComponentsOnDesrtoy);
+			if(_bClearComponentsOnDesrtoy) { delete Component; };
 		}
 	}
 
@@ -34,11 +35,13 @@ FNode::~FNode()
 FVoid FNode::Add(FComponent* Component)
 {
 	_Components.Add(Component);
+	Component->_OnParentAdd(this);
 }
 
 FVoid FNode::Remove(FComponent* Component)
 {
 	_Components.Remove(Component);
+	Component->_OnParentRemove(this);
 }
 
 FVoid FNode::Add(FNode* Node)
@@ -70,7 +73,6 @@ const FNode::FComponents FNode::Components() const
 {
 	return _Components;
 }
-
 
 FNode::FNodes FNode::Nodes()
 {
