@@ -6,7 +6,7 @@ using namespace NDev;
 using namespace NDev::Types;
 using namespace NDev::Nodes;
 
-FNode::FNode() : FObject()
+FNode::FNode() : FObject(), _TParentable<FNode*>()
 {
 	_bClearComponentsOnDesrtoy = True;
 	_bClearNodesOnDestroy = False;
@@ -14,7 +14,7 @@ FNode::FNode() : FObject()
 
 FNode::~FNode()
 {
-	for (auto Component : Components())
+	for (auto Component : _Components)
 	{
 		if (Component)
 		{
@@ -25,7 +25,7 @@ FNode::~FNode()
 
 	if (_bClearNodesOnDestroy)
 	{
-		for (auto Node : Nodes())
+		for (auto Node : _Nodes)
 		{
 			if (Node && !Node->IsProtected()) { delete Node; }
 		}
@@ -92,4 +92,10 @@ FBoolean FNode::IsClearNodesOnDestory() const
 FBoolean FNode::IsClearComponentsOnDesrtoy() const
 {
 	return _bClearComponentsOnDesrtoy;
+}
+
+FVoid FNode::Execute(FNode* Parent)
+{
+	for (auto Component : _Components) { Component->Execute(this); }
+	for (auto Node : _Nodes) { Node->Execute(this); }
 }

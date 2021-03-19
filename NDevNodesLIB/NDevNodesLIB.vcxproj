@@ -103,6 +103,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)lib;$(SolutionDir)$(Platform)\lib;$(SolutionDir)dep;$(SolutionDir)$(Platform)\dep;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -130,6 +131,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)lib;$(SolutionDir)$(Platform)\lib;$(SolutionDir)dep;$(SolutionDir)$(Platform)\dep;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -157,6 +159,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)lib;$(SolutionDir)$(Platform)\lib;$(SolutionDir)dep;$(SolutionDir)$(Platform)\dep;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -184,6 +187,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)lib;$(SolutionDir)$(Platform)\lib;$(SolutionDir)dep;$(SolutionDir)$(Platform)\dep;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -213,16 +217,16 @@
     <ClInclude Include="..\lib\NDevNodesCompute.h" />
     <ClInclude Include="..\lib\NDevNodesComputes.h" />
     <ClInclude Include="..\lib\NDevNodesComputes\NDevNodesSimplifyCompute.h" />
-    <ClInclude Include="..\lib\NDevNodesConstruct.h" />
     <ClInclude Include="..\lib\NDevNodesNode.h" />
     <ClInclude Include="..\lib\NDevObject.h" />
     <ClInclude Include="..\lib\_NDevNodesCollections.h" />
+    <ClInclude Include="..\lib\_NDevNodesDefinitions.h" />
+    <ClInclude Include="..\lib\_NDevNodesExceptions.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NDevNodesComponent.cpp" />
     <ClCompile Include="NDevNodesCompute.cpp" />
-    <ClCompile Include="NDevNodesConstruct.cpp" />
     <ClCompile Include="NDevNodesNode.cpp" />
     <ClCompile Include="NDevObject.cpp" />
     <ClCompile Include="pch.cpp">

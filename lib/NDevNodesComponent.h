@@ -2,37 +2,29 @@
 
 #include "NDev.h"
 #include "NDevObject.h"
+#include "NDevNodesNode.h"
 
-namespace NDev
+#include "_NDevNodesDefinitions.h"
+
+namespace NDev::Nodes
 {
-	namespace Nodes
+	using namespace Types;
+
+	struct FNode;
+
+	struct FComponent : FObject, _TParentable<FNode*>
 	{
-		using namespace Types;
+		FBoolean _bEnable;
 
-		class FComponent : FObject
-		{
-		private:
-			_bThrowParentsUnsupported;
+		FComponent();
 
-		public:
-			FComponent();
+		virtual ~FComponent();
 
-			virtual ~FComponent();
+		FVoid Enable(FBoolean bTrue = True);
 
-			virtual TList<FNode*> Parents();
+		FVoid Execute(FNode* Parent);
 
-			virtual FVoid ThrowParentsUnsupported(FBoolean bTrue = True);
+		virtual FVoid _Execute(FNode* Parent);
 
-			virtual FBoolean HasParents();
-
-		protected:
-			virtual FVoid _OnParentAdd(FNode* Parent);
-
-			virtual FVoid _OnParentRemove(FNode* Parent);
-
-			virtual FVoid _OnParentDestroy(FNode* Parent, FBoolean bIsComponentDestroy);
-
-		};
-
-	}
+	};
 }

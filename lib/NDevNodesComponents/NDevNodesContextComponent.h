@@ -3,30 +3,15 @@
 #include "NDevNodesComponent.h"
 #include "NDevNodesNode.h"
 
-namespace NDev
+namespace NDev::Nodes::Components
 {
-	namespace Nodes
+	using namespace Types;
+
+	struct FContext : public FComponent
 	{
-		namespace Components
-		{
-			using namespace Types;
+		FContext() : FComponent() { }
 
-			class FContext : public FComponent
-			{
-			private:
-				FBoolean _bEnable;
+		virtual ~FContext() { }
 
-			public:
-				FContext() : FComponent() { }
-
-				virtual ~FContext() { }
-
-				virtual FVoid Execute(FNode* Node) { } ;
-			
-			private:
-				FVoid _Execute(FNode* Node) { if (_bEnable) { this->Execute(Node); } };
-
-			};
-		}
-	}
+	};
 }

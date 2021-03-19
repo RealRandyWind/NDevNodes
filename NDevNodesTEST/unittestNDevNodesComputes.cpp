@@ -5,21 +5,19 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 #include "NDevNodes.h"
 
-namespace NDev
+namespace NDev::Test
 {
-	namespace Test {
-		using namespace NDev;
-		using namespace NDev::Types;
-		using namespace NDev::Nodes;
+	using namespace NDev;
+	using namespace NDev::Types;
+	using namespace NDev::Nodes;
 
-		TEST_CLASS(UnitTestNDevNodesComputes)
+	TEST_CLASS(UnitTestNDevNodesComputes)
+	{
+	public:
+		TEST_METHOD(TestSimplify)
 		{
-		public:
-			TEST_METHOD(TestSimplify)
-			{
-				auto Compute = new Computes::FSimplify();
-				delete Compute;
-			}
-		};
-	}
+			auto Compute = new Computes::FSimplify();
+			delete Compute;
+		}
+	};
 }

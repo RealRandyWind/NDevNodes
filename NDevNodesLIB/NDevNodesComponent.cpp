@@ -4,11 +4,12 @@
 
 using namespace NDev;
 using namespace NDev::Types;
+using namespace NDev::Exceptions;
 using namespace NDev::Nodes;
 
-FComponent::FComponent() : FObject()
+FComponent::FComponent() : FObject(), _TParentable<FNode*>()
 {
-    _bThrowParentsUnsupported = True;
+    _bEnable = True;
 }
 
 FComponent::~FComponent()
@@ -16,38 +17,18 @@ FComponent::~FComponent()
 
 }
 
-TList<FNodes*> FComponent::Parents()
+FVoid FComponent::Enable(FBoolean bTrue)
 {
-    {
-        if (_bThrowParentsUnsupported)
-        {
-            throw FExceptionUnsupported();
-        }
-        return TList<FNode*>();
-    }
+    _bEnable = bTrue;
 }
 
-FVoid FComponent::ThrowParentsUnsupported(FBoolean bTrue)
+
+FVoid FComponent::Execute(FNode* Parent)
 {
-    _bThrowParentsUnsupported = bTrue;
+    if (_bEnable) { _Execute(Parent); }
 }
 
-FBoolean FComponent::HasParents()
+FVoid FComponent::_Execute(FNode* Parent)
 {
-    return False;
-}
-
-FVoid FComponent::_OnParentAdd(FNode* Parent)
-{
-
-}
-
-FVoid FComponent::_OnParentRemove(FNode* Parent)
-{
-
-}
-
-FVoid FComponent::_OnParentDestroy(FNode* Parent, FBoolean bIsComponentDestroy)
-{
-
+    
 }

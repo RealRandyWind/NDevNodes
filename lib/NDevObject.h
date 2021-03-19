@@ -6,12 +6,10 @@ namespace NDev
 {
 	using namespace Types;
 
-	class FObject
+	struct FObject
 	{
-	private:
 		FBoolean  _bProtect;
 
-	public:
 		FObject();
 
 		virtual ~FObject() = 0;

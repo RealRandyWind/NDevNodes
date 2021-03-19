@@ -2,20 +2,13 @@
 
 #include "NDevNodesCompute.h"
 
-namespace NDev
+namespace NDev::Nodes::Computes
 {
-	namespace Nodes
-	{
-		namespace Computes 
-		{
-			using namespace Types;
+	using namespace Types;
 
-			class FSimplify : public FCompute
-			{
-			public:
-				FSimplify() : FCompute() { }
-				virtual ~FSimplify() { }
-			};
-		}
-	}
+	struct FSimplify : public FCompute
+	{
+		FSimplify() : FCompute() { }
+		virtual ~FSimplify() { }
+	};
 }

@@ -5,53 +5,52 @@
 #include "NDevNodesComponent.h"
 
 #include "_NDevNodesCollections.h"
+#include "_NDevNodesDefinitions.h"
 
-namespace NDev
+namespace NDev::Nodes
 {
-	namespace Nodes
+	using namespace Types;
+		
+	struct FComponent;
+
+	struct FNode : FObject, _TParentable<FNode*>
 	{
-		using namespace Types;
+		using FComponents = TList<FComponent*>;
+		using FNodes = TList<FNode*>;
 
-		class FNode : FObject
-		{
-		public:
-			using FComponents = TList<FComponent*>;
-			using FNodes = TList<FNode*>;
+		FBoolean _bClearNodesOnDestroy, _bClearComponentsOnDesrtoy;
+		FComponents _Components;
+		FNodes _Nodes;
 
-		private:
-			FBoolean _bClearNodesOnDestroy, _bClearComponentsOnDesrtoy;
-			FComponents _Components;
-			FNodes _Nodes;
-
-		public:
-			FNode();
+		FNode();
 			
-			~FNode();
+		~FNode();
 
-			FVoid Add(FComponent* Component);
+		FVoid Add(FComponent* Component);
 			
-			FVoid Remove(FComponent* Component);
+		FVoid Remove(FComponent* Component);
 
-			FVoid Add(FNode* Node);
+		FVoid Add(FNode* Node);
 
-			FVoid Remove(FNode* Node);
+		FVoid Remove(FNode* Node);
 			
-			FVoid ClearNodesOnDestory(FBoolean bTrue = True);
+		FVoid ClearNodesOnDestory(FBoolean bTrue = True);
 
-			FVoid ClearComponentsOnDesrtoy(FBoolean bTrue = True);
+		FVoid ClearComponentsOnDesrtoy(FBoolean bTrue = True);
 
-			FComponents Components();
+		FComponents Components();
 
-			const FComponents Components() const;
+		const FComponents Components() const;
 
-			FNodes Nodes();
+		FNodes Nodes();
 
-			const FNodes Nodes() const;
+		const FNodes Nodes() const;
 
-			FBoolean IsClearNodesOnDestory() const;
+		FBoolean IsClearNodesOnDestory() const;
 
-			FBoolean IsClearComponentsOnDesrtoy() const;
+		FBoolean IsClearComponentsOnDesrtoy() const;
 
-		};
-	}
+		FVoid Execute(FNode *Parent = NullPtr);
+
+	};
 }

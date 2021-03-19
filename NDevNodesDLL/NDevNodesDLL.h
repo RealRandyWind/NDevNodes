@@ -8,18 +8,15 @@
 
 #include "NDevNodes.h"
 
-namespace NDev
+namespace NDev::Nodes
 {
-	namespace Nodes
-	{
-		class NDEVNODESDLL_EXPORTS FObject;
+	struct NDEVNODESDLL_EXPORTS FObject;
 
-		class NDEVNODESDLL_EXPORTS FNode;
+	struct NDEVNODESDLL_EXPORTS FNode;
 
-		class NDEVNODESDLL_EXPORTS FComponent;
+	struct NDEVNODESDLL_EXPORTS FComponent;
 
-		class NDEVNODESDLL_EXPORTS FConstruct;
-
-		class NDEVNODESDLL_EXPORTS FCompute;
-	}
+	struct NDEVNODESDLL_EXPORTS FCompute;
+		
+	template struct NDEVNODESDLL_EXPORTS _TParentable<FNode*>;
 }

@@ -3,18 +3,13 @@
 #include "NDev.h"
 #include "NDevObject.h"
 
-namespace NDev
+namespace NDev::Nodes
 {
-	namespace Nodes
+	using namespace Types;
+
+	struct FCompute : FObject
 	{
-		using namespace Types;
-
-		class FCompute : FObject
-		{
-		public:
-			FCompute();
-			virtual ~FCompute();
-		};
-
-	}
+		FCompute();
+		virtual ~FCompute();
+	};
 }

@@ -2,21 +2,14 @@
 
 #include "NDevNodesComponent.h"
 
-namespace NDev
+namespace NDev::Nodes::Components
 {
-	namespace Nodes
+	using namespace Types;
+
+	struct FType : public FComponent
 	{
-		namespace Components
-		{
-			using namespace Types;
+		FType() : FComponent() { }
 
-			class FType : public FComponent
-			{
-			public:
-				FType() : FComponent() { }
-
-				virtual ~FType() { }
-			};
-		}
-	}
+		virtual ~FType() { }
+	};
 }

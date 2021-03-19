@@ -39,9 +39,6 @@
     <ClInclude Include="..\lib\NDevNodesCompute.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\NDevNodesConstruct.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\lib\NDevNodesNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,6 +69,12 @@
     <ClInclude Include="..\lib\_NDevNodesCollections.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\lib\_NDevNodesExceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\_NDevNodesDefinitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -81,9 +84,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NDevNodesCompute.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NDevNodesConstruct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NDevNodesNode.cpp">

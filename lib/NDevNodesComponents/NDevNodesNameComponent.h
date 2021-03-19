@@ -2,24 +2,16 @@
 
 #include "NDevNodesComponent.h"
 
-namespace NDev
+namespace NDev::Nodes::Components
 {
-	namespace Nodes
+	using namespace Types;
+
+	struct FName : public FComponent
 	{
-		namespace Components
-		{
-			using namespace Types;
+		FString _Alias;
 
-			class FName : public FComponent
-			{
-			private:
-				FString _Alias;
+		FName() : FComponent() { _Alias = NullPtr;  }
 
-			public:
-				FName() : FComponent() { }
-
-				virtual ~FName() { }
-			};
-		}
-	}
+		virtual ~FName() { }
+	};
 }

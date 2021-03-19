@@ -2,20 +2,17 @@
 
 #include "NDevTypes.h"
 
-namespace NDev
+namespace NDev::Exceptions
 {
-    namespace Exceptions
-    {
-        struct _FExceptionNotImplemented : FException { };
+    struct _FExceptionNotImplemented : FException { };
 
-        struct _FExceptionDebug : FException { };
+    struct _FExceptionDebug : FException { };
 
-        struct FExceptionUnsupported : FException { };
+    struct FExceptionUnsupported : FException { };
         
-        struct FExceptionDeprecated : FException { };
+    struct FExceptionDeprecated : FException { };
         
-        struct FExceptionExperimental : FException { };
+    struct FExceptionExperimental : FException { };
         
-        struct FExceptionCompromized : FException { };
-    }
+    struct FExceptionCompromized : FException { };
 }

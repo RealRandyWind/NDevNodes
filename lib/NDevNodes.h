@@ -5,4 +5,7 @@
 #include "NDevNodesNode.h"
 #include "NDevNodesComponents.h"
 #include "NDevNodesComputes.h"
-#include "NDevNodesConstruct.h"
+
+#include "_NDevNodesCollections.h"
+#include "_NDevNodesDefinitions.h"
+#include "_NDevNodesExceptions.h"
