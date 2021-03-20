@@ -27,6 +27,7 @@ FNode::~FNode()
 	{
 		for (auto Node : _Nodes)
 		{
+			Node->_OnParentDestroy(this, _bClearNodesOnDestroy);
 			if (Node && !Node->IsProtected()) { delete Node; }
 		}
 	}
@@ -47,11 +48,13 @@ FVoid FNode::Remove(FComponent* Component)
 FVoid FNode::Add(FNode* Node)
 {
 	_Nodes.Add(Node);
+	Node->_OnParentAdd(this);
 }
 
 FVoid FNode::Remove(FNode* Node)
 {
 	_Nodes.Remove(Node);
+	Node->_OnParentRemove(this);
 }
 
 FVoid FNode::ClearNodesOnDestory(FBoolean bTrue)

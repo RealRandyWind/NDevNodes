@@ -49,6 +49,6 @@ namespace NDev::Nodes
 
         virtual FVoid _OnParentRemove(FParent Parent) { };
 
-        virtual FVoid _OnParentDestroy(FParent Parent, FBoolean bIsComponentDestroy) { };
+        virtual FVoid _OnParentDestroy(FParent Parent, FBoolean bIsDestroy) { };
     };
 }
